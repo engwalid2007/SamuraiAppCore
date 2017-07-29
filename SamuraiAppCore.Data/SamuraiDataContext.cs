@@ -8,6 +8,13 @@ namespace SamuraiAppCore.Data
         public DbSet<Samurai> Samurais { get; set; }
         public DbSet<Buttle> Buttles { get; set; }
         public DbSet<Quote> Quotes { get; set; }
+        public DbSet<SamuraiButtle> SamuraiButtles { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SamuraiButtle>().HasKey(c => new { c.ButtleId, c.SamuraiId });
+            base.OnModelCreating(modelBuilder);
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
