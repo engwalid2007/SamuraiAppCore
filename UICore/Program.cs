@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SamuraiAppCore.Data;
+using SamuraiAppCore.Domains;
+using System;
 
 namespace UICore
 {
@@ -6,7 +8,16 @@ namespace UICore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Samurai samurai = new Samurai()
+            {
+                CreationDate = DateTime.Now,
+                Name = "New Samurai"
+            };
+            using (SamuraiDataContext context = new SamuraiDataContext())
+            {
+                context.Samurais.Add(samurai);
+                context.SaveChanges();
+            }
         }
     }
 }
