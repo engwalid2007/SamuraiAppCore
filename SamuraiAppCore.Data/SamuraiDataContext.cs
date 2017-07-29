@@ -9,10 +9,12 @@ namespace SamuraiAppCore.Data
         public DbSet<Buttle> Buttles { get; set; }
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<SamuraiButtle> SamuraiButtles { get; set; }
+        public DbSet<Warrior> Warriors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SamuraiButtle>().HasKey(c => new { c.ButtleId, c.SamuraiId });
+
             base.OnModelCreating(modelBuilder);
         }
 

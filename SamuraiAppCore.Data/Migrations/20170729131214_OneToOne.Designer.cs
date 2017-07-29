@@ -8,9 +8,10 @@ using SamuraiAppCore.Data;
 namespace SamuraiAppCore.Data.Migrations
 {
     [DbContext(typeof(SamuraiDataContext))]
-    partial class SamuraiDataContextModelSnapshot : ModelSnapshot
+    [Migration("20170729131214_OneToOne")]
+    partial class OneToOne
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

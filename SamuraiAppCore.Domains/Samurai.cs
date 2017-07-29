@@ -11,7 +11,8 @@ namespace SamuraiAppCore.Domains
         }
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime CreationDate { get; set; }    
+        public DateTime CreationDate { get; set; }
+        public Warrior Warrior { get; set; }
         public List<Quote> Quotes { get; set; }
         
     }
