@@ -1,6 +1,8 @@
 ﻿using SamuraiAppCore.Data;
 using SamuraiAppCore.Domains;
 using System;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Logging;
 
 namespace UICore
 {
@@ -15,9 +17,11 @@ namespace UICore
             };
             using (SamuraiDataContext context = new SamuraiDataContext())
             {
+                context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
                 context.Samurais.Add(samurai);
                 context.SaveChanges();
             }
+            Console.ReadLine();
         }
     }
 }
