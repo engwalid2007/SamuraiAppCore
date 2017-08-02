@@ -20,6 +20,7 @@ namespace UICore
                 context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
                 context.Samurais.Add(samurai);
                 context.SaveChanges();
+
             }
             Console.ReadLine();
         }
